@@ -1,0 +1,84 @@
+/* header */
+.header{
+    background: linear-gradient(136deg,#1F4E79,#2E75B6);
+    padding: 25px 30px;
+    border-radius: 12px;
+    margin-bottom:25px;
+    width: 100%;
+
+}
+.header h1{
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    font-weight:bold;
+    text-align: center;
+}
+
+.header p{
+    color: #a8c8e8;
+    font-size:14px;
+    margin:5px 0 0 0;
+    text-align: center;
+}
+
+/* KPIS */
+.kpi-card{
+    background:white;
+    border-radius:12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    border-left: 5px solid #2E75B6;
+}
+
+.kpi-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1F4E79;
+}
+
+.kpi-label {
+    font-size: 13px;
+    color: #666666;
+    margin-top: 5px;
+    white-space: nowrap;
+}
+
+/* Alertes */
+.alerte-bon {
+    background: linear-gradient(135deg, #00B050, #70AD47);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.alerte-modere {
+    background: linear-gradient(135deg, #FF6600, #FFC000);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.alerte-dangereux {
+    background: linear-gradient(135deg, #C00000, #FF0000);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 8px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Sidebar */
+.css-1d391kg {
+    background-color: #F0F4F8;
+}
+
+
