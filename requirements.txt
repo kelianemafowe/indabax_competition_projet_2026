@@ -19,3 +19,4 @@ retry-requests
 jupyter
 ipykernel
 folium
+streamlit_folium
