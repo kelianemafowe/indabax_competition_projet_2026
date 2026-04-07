@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 # ============================
 st.set_page_config(
     page_title="VRI Dashboard — Cameroun",
-    page_icon="🦟",
+    page_icon="🌍",
     layout="wide",
     initial_sidebar_state="expanded"
 )
