@@ -1,0 +1,470 @@
+/* ============================================
+   DASHBOARD VRI — IndabaX 2026 Cameroun
+   Design : dark scientific / health alert
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ── Global ── */
+html, body, [class*="css"] {
+    font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.stApp {
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+/* ── Header ── */
+.header {
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+    border: 1px solid rgba(46, 117, 182, 0.3);
+    border-radius: 16px;
+    padding: 24px 32px;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(46,117,182,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.header-icon {
+    font-size: 40px;
+    filter: drop-shadow(0 0 12px rgba(46,117,182,0.6));
+}
+
+.header-text h1 {
+    color: #e6edf3;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    letter-spacing: -0.3px;
+}
+
+.header-text p {
+    color: #7d8590;
+    font-size: 13px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.header-badge {
+    margin-left: auto;
+    background: rgba(46, 117, 182, 0.15);
+    border: 1px solid rgba(46, 117, 182, 0.4);
+    color: #58a6ff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+/* ── Sidebar ── */
+section[data-testid="stSidebar"] {
+    background: #0d1117 !important;
+    border-right: 1px solid #21262d !important;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #e6edf3 !important;
+}
+
+.sidebar-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #7d8590 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #21262d;
+}
+
+.sidebar-info {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 12.5px;
+    color: #7d8590 !important;
+    line-height: 1.7;
+}
+
+/* ── KPI Cards ── */
+.kpi-row {
+    margin-bottom: 24px;
+}
+
+.kpi-card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.kpi-card:hover {
+    border-color: rgba(46, 117, 182, 0.4);
+    transform: translateY(-2px);
+}
+
+.kpi-vri {
+    border-left: 3px solid transparent;
+}
+
+.kpi-vri.vri-faible  { border-left-color: #00B050; background: linear-gradient(135deg, #161b22, #0d1f12); }
+.kpi-vri.vri-modere  { border-left-color: #FF9900; background: linear-gradient(135deg, #161b22, #1f180d); }
+.kpi-vri.vri-eleve   { border-left-color: #C00000; background: linear-gradient(135deg, #161b22, #1f0d0d); }
+
+.kpi-icon {
+    font-size: 20px;
+    line-height: 1;
+}
+
+.kpi-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #e6edf3;
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 1.1;
+}
+
+.kpi-label {
+    font-size: 11px;
+    color: #7d8590;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.kpi-badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-top: 4px;
+    letter-spacing: 0.5px;
+}
+
+.vri-faible .kpi-badge { background: rgba(0,176,80,0.2); color: #00B050; }
+.vri-modere .kpi-badge { background: rgba(255,153,0,0.2); color: #FF9900; }
+.vri-eleve  .kpi-badge { background: rgba(192,0,0,0.2);   color: #ff6b6b; }
+
+.kpi-badge-gray {
+    font-size: 10px;
+    color: #7d8590;
+    margin-top: 2px;
+}
+
+/* ── Tabs ── */
+.stTabs [data-baseweb="tab-list"] {
+    background: #161b22;
+    border-radius: 10px;
+    padding: 4px;
+    border: 1px solid #21262d;
+    gap: 4px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent !important;
+    color: #7d8590 !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    font-size: 13px !important;
+    padding: 8px 16px !important;
+    transition: all 0.2s !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #1f6feb !important;
+    color: white !important;
+}
+
+.stTabs [data-baseweb="tab-panel"] {
+    padding-top: 20px;
+}
+
+/* ── Alerte cards ── */
+.alerte-card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin: 6px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s;
+}
+
+.alerte-card:hover {
+    transform: translateX(4px);
+}
+
+.alerte-card.vri-faible { border-left: 3px solid #00B050; }
+.alerte-card.vri-modere { border-left: 3px solid #FF9900; }
+.alerte-card.vri-eleve  { border-left: 3px solid #C00000; }
+
+.alerte-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.alerte-icon { font-size: 20px; }
+
+.alerte-ville {
+    font-weight: 600;
+    font-size: 14px;
+    color: #e6edf3;
+}
+
+.alerte-region {
+    font-size: 11px;
+    color: #7d8590;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.alerte-right {
+    text-align: right;
+}
+
+.alerte-vri {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: 600;
+    color: #e6edf3;
+}
+
+.vri-faible .alerte-vri { color: #00B050; }
+.vri-modere .alerte-vri { color: #FF9900; }
+.vri-eleve  .alerte-vri { color: #ff6b6b; }
+
+.alerte-niveau {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.vri-faible .alerte-niveau { color: #00B050; }
+.vri-modere .alerte-niveau { color: #FF9900; }
+.vri-eleve  .alerte-niveau { color: #ff6b6b; }
+
+.alerte-details {
+    font-size: 11px;
+    color: #7d8590;
+    margin-top: 2px;
+}
+
+/* ── Prédiction ── */
+.pred-info {
+    background: linear-gradient(135deg, #161b22, #1a2332);
+    border: 1px solid rgba(31, 111, 235, 0.3);
+    border-radius: 12px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+    color: #7d8590;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.pred-result {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.pred-result.vri-faible { border-color: #00B050; background: linear-gradient(135deg, #161b22, #0d1f12); }
+.pred-result.vri-modere { border-color: #FF9900; background: linear-gradient(135deg, #161b22, #1f180d); }
+.pred-result.vri-eleve  { border-color: #C00000; background: linear-gradient(135deg, #161b22, #1f0d0d); }
+
+.pred-icon { font-size: 32px; margin-bottom: 8px; }
+
+.pred-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 36px;
+    font-weight: 700;
+    color: #e6edf3;
+    line-height: 1;
+}
+
+.pred-label {
+    font-size: 11px;
+    color: #7d8590;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 6px;
+}
+
+.pred-niveau {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.vri-faible .pred-niveau { color: #00B050; }
+.vri-modere .pred-niveau { color: #FF9900; }
+.vri-eleve  .pred-niveau { color: #ff6b6b; }
+
+.pred-date {
+    font-size: 11px;
+    color: #7d8590;
+    margin-top: 8px;
+}
+
+.pred-info-card {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 16px;
+    padding: 24px;
+    height: 100%;
+}
+
+.pred-info-title {
+    font-size: 11px;
+    color: #7d8590;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.pred-info-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 8px;
+}
+
+.pred-info-sub {
+    font-size: 12px;
+    color: #7d8590;
+    line-height: 1.6;
+}
+
+.pred-recomm {
+    border-radius: 16px;
+    padding: 24px;
+    height: 100%;
+}
+
+.pred-recomm-text {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: #333;
+    margin-top: 8px;
+}
+
+/* ── Selectbox, inputs dark ── */
+.stSelectbox > div > div,
+.stNumberInput > div > div > input,
+.stDateInput > div > div > input {
+    background: #161b22 !important;
+    border-color: #21262d !important;
+    color: #e6edf3 !important;
+    border-radius: 8px !important;
+}
+
+/* ── Buttons ── */
+.stButton > button {
+    background: linear-gradient(135deg, #1f6feb, #2E75B6) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    padding: 10px 24px !important;
+    transition: all 0.2s !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(31, 111, 235, 0.3) !important;
+}
+
+/* ── Expander ── */
+.streamlit-expanderHeader {
+    background: #161b22 !important;
+    border: 1px solid #21262d !important;
+    border-radius: 10px !important;
+    color: #e6edf3 !important;
+}
+
+.streamlit-expanderContent {
+    background: #0d1117 !important;
+    border: 1px solid #21262d !important;
+    border-top: none !important;
+}
+
+/* ── Metrics natifs Streamlit (fallback) ── */
+[data-testid="metric-container"] {
+    background: #161b22;
+    border: 1px solid #21262d;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+[data-testid="metric-container"] label {
+    color: #7d8590 !important;
+}
+
+[data-testid="metric-container"] [data-testid="stMetricValue"] {
+    color: #e6edf3 !important;
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #21262d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #30363d; }
+
+/* ── Warning / info boxes ── */
+.stAlert {
+    background: #161b22 !important;
+    border-radius: 10px !important;
+    color: #e6edf3 !important;
+}
+
+/* ── Divider ── */
+hr {
+    border-color: #21262d !important;
+}
+
+/* ── Markdown headings ── */
+h3, h4 {
+    color: #e6edf3 !important;
+    font-weight: 600 !important;
+}
+
+h3 { font-size: 18px !important; margin-bottom: 16px !important; }
+h4 { font-size: 14px !important; color: #7d8590 !important; }
